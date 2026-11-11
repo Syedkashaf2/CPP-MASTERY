@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "C++ Mastery Persistent Mistake Ledger",
+  "type": "object",
+  "required": ["schema_version", "next_mistake_number", "mistakes"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "next_mistake_number": { "type": "integer", "minimum": 20 },
+    "baseline_reserved_range": { "type": "string" },
+    "mistakes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "mistake_id",
+          "topic_ids",
+          "task_ids",
+          "taxonomy_class",
+          "original_incorrect_reasoning",
+          "root_cause",
+          "observable_symptom",
+          "correction",
+          "reproduced_independently",
+          "recurred",
+          "status"
+        ],
+        "properties": {
+          "mistake_id": { "type": "string", "pattern": "^M-\\d{3,}$" },
+          "source_session_id": { "type": "string" },
+          "topic_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "task_ids": { "type": "array", "items": { "type": "string" } },
+          "taxonomy_class": { "type": "string" },
+          "original_incorrect_reasoning": { "type": "string" },
+          "root_cause": { "type": "string" },
+          "observable_symptom": { "type": "string" },
+          "correction": { "type": "string" },
+          "reproduced_independently": { "type": "boolean" },
+          "recurred": { "type": "boolean" },
+          "recurrence_sessions": { "type": "array", "items": { "type": "string" } },
+          "recurs_from_baseline_id": { "type": ["string", "null"] },
+          "related_concepts": { "type": "array", "items": { "type": "string" } },
+          "status": {
+            "enum": [
+              "open",
+              "remediation_in_progress",
+              "corrected_awaiting_retest",
+              "resolved_verified_delayed"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

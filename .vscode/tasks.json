@@ -1,0 +1,96 @@
+{
+  "version": "2.0.0",
+  "inputs": [
+    {
+      "id": "inboxTopics",
+      "type": "promptString",
+      "description": "Space-separated topic IDs (e.g. T-023 or T-017 T-020)",
+      "default": "T-023"
+    },
+    {
+      "id": "inboxProbe",
+      "type": "promptString",
+      "description": "Probe ID if delayed recall (e.g. R-013), or leave empty",
+      "default": ""
+    },
+    {
+      "id": "inboxFile",
+      "type": "promptString",
+      "description": "Inbox JSON path relative to workspace root",
+      "default": ".mastery/inbox/session-draft.json"
+    }
+  ],
+  "tasks": [
+    {
+      "label": "Mastery: Collect Git Evidence",
+      "type": "shell",
+      "command": "python3 scripts/mastery_engine.py collect",
+      "problemMatcher": []
+    },
+    {
+      "label": "Mastery: Compile & Test Active C++ File (C++17)",
+      "type": "shell",
+      "command": "mkdir -p build && python3 scripts/mastery_engine.py test -- \"g++ -std=c++17 -Wall -Wextra -Wpedantic -Wconversion -Wshadow -O2 '${file}' -o 'build/${fileBasenameNoExtension}.out' && './build/${fileBasenameNoExtension}.out'\"",
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Mastery: Create Inbox Assessment Draft",
+      "type": "shell",
+      "command": "python3 scripts/mastery_engine.py new-inbox --topics \"${input:inboxTopics}\" --probe \"${input:inboxProbe}\"",
+      "problemMatcher": []
+    },
+    {
+      "label": "Mastery: Import Reviewed Session Record",
+      "type": "shell",
+      "command": "python3 scripts/mastery_engine.py import-record \"${input:inboxFile}\"",
+      "problemMatcher": []
+    },
+    {
+      "label": "Mastery: Check Retention Probes",
+      "type": "shell",
+      "command": "python3 scripts/mastery_engine.py retention",
+      "problemMatcher": []
+    },
+    {
+      "label": "Mastery: Rebuild Documentation",
+      "type": "shell",
+      "command": "python3 scripts/mastery_engine.py rebuild",
+      "problemMatcher": []
+    },
+    {
+      "label": "Mastery: Update Dashboard",
+      "type": "shell",
+      "command": "python3 scripts/mastery_engine.py dashboard",
+      "problemMatcher": []
+    },
+    {
+      "label": "Mastery: Create Snapshot",
+      "type": "shell",
+      "command": "python3 scripts/mastery_engine.py snapshot",
+      "problemMatcher": []
+    },
+    {
+      "label": "Mastery: Validate Records & Tests",
+      "type": "shell",
+      "command": "python3 scripts/mastery_engine.py validate --check-docs && python3 -m unittest discover -s tests -v",
+      "problemMatcher": []
+    },
+    {
+      "label": "Mastery: Prepare Git Review",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Mastery: Collect Git Evidence",
+        "Mastery: Rebuild Documentation",
+        "Mastery: Update Dashboard",
+        "Mastery: Validate Records & Tests"
+      ],
+      "type": "shell",
+      "command": "python3 scripts/mastery_engine.py git-review",
+      "problemMatcher": []
+    }
+  ]
+}

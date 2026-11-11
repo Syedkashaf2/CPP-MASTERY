@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "C++ Mastery Retention Scheduler State",
+  "type": "object",
+  "required": ["schema_version", "next_probe_number", "probes"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "next_probe_number": { "type": "integer", "minimum": 17 },
+    "baseline_completed_short_interval": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "probes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "probe_id",
+          "topic_id",
+          "source_evidence_id",
+          "interval_days",
+          "tier",
+          "scheduled_date",
+          "status",
+          "retention_verified"
+        ],
+        "properties": {
+          "probe_id": { "type": "string", "pattern": "^R-\\d{3,}$" },
+          "topic_id": { "type": "string", "pattern": "^T-\\d{3}$" },
+          "source_evidence_id": { "type": "string" },
+          "source_session_id": { "type": "string" },
+          "probe_type": { "type": "string" },
+          "task_summary": { "type": "string" },
+          "interval_days": { "type": "integer", "minimum": 1 },
+          "tier": { "enum": ["short_interval", "long_term"] },
+          "scheduled_date": { "type": "string", "format": "date" },
+          "status": {
+            "enum": [
+              "scheduled",
+              "due",
+              "overdue",
+              "completed_passed",
+              "completed_failed",
+              "completed_assisted",
+              "waived"
+            ]
+          },
+          "completed_date": { "type": ["string", "null"] },
+          "completed_session_id": { "type": ["string", "null"] },
+          "hint_level": { "type": ["string", "null"], "enum": ["H0", "H1", "H2", "H3", "H4", null] },
+          "hints_used": { "type": "array", "items": { "type": "string" } },
+          "independent_result": { "type": ["string", "null"] },
+          "retention_verified": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

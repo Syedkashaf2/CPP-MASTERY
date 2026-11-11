@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C++ Mastery Evidence Dashboard</title>
+<style>
+  :root {
+    --bg: #0f172a; --card: #1e293b; --border: #334155;
+    --text: #e2e8f0; --muted: #94a3b8; --accent: #38bdf8;
+  }
+  * { box-sizing: border-box; }
+  body { font: 15px/1.55 system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); max-width: 1200px; margin: 0 auto; padding: 2rem 1.25rem; }
+  h1, h2 { margin: 0 0 .75rem; }
+  h2 { margin-top: 2rem; font-size: 1.15rem; border-bottom: 1px solid var(--border); padding-bottom: .4rem; }
+  .sub { color: var(--muted); margin-bottom: 1.5rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem; }
+  .card small { color: var(--muted); text-transform: uppercase; letter-spacing: .04em; font-size: .72rem; }
+  .metric { font-size: 1.7rem; font-weight: 700; margin: .25rem 0; color: var(--accent); }
+  .guardrail { background: #172554; border: 1px solid #1d4ed8; border-radius: 10px; padding: .9rem 1rem; margin: 1.25rem 0; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 10px; overflow: hidden; margin-top: .5rem; }
+  th, td { border-bottom: 1px solid var(--border); padding: .55rem .65rem; text-align: left; font-size: .9rem; vertical-align: top; }
+  th { background: #0b1220; color: var(--muted); font-weight: 600; }
+  code { background: #0b1220; padding: .1rem .35rem; border-radius: 4px; font-size: .85em; }
+  .badge, .pill { display: inline-block; padding: .12rem .45rem; border-radius: 999px; font-size: .78rem; font-weight: 600; }
+  .badge-A { background: #14532d; color: #86efac; }
+  .badge-C { background: #713f12; color: #fde047; }
+  .badge-E { background: #334155; color: #cbd5e1; }
+  .pill-overdue { background: #7f1d1d; color: #fecaca; }
+  .pill-due { background: #78350f; color: #fde68a; }
+  .pill-scheduled { background: #1e3a8a; color: #bfdbfe; }
+  .pill-completed_passed { background: #14532d; color: #86efac; }
+  .pill-completed_failed, .pill-completed_assisted { background: #7c2d12; color: #fed7aa; }
+  .filter { margin: .5rem 0; padding: .45rem .65rem; background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 6px; width: 280px; }
+</style>
+</head>
+<body>
+  <h1>C++ Mastery Evidence Dashboard</h1>
+  <div class="sub">
+    Source As Of: <code>2026-11-11</code> |
+    Baseline: <code>2026-11-11</code> |
+    Derived strictly from immutable baseline + <code>.mastery/records/</code>
+  </div>
+
+  <div class="guardrail">
+    <strong>Protocol Guardrails:</strong> Learning coverage, demonstrated competence, and long-term retention are never collapsed into a single mastery percentage.
+    Tutor-assisted work (<code>H1–H4</code>) never counts as independent (<code>H0</code>) mastery. Gemini assessments require explicit human acceptance before import.
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <small>1. Learning Coverage (Baseline)</small>
+      <div class="metric">23 / 25 Studied</div>
+      <div>1 partial (<code>T-024</code>), 1 unstudied (<code>T-025</code>). Stages 1–8 covered.</div>
+    </div>
+    <div class="card">
+      <small>2. Demonstrated Competence (New)</small>
+      <div class="metric">0 First-Attempt H0</div>
+      <div>Transfer H0: 0 | Delayed H0: 0 | Assisted (H1–H4): 0 | Remediated: 0</div>
+    </div>
+    <div class="card">
+      <small>3a. Short-Interval Retention (&lt;7d)</small>
+      <div class="metric">8 Checks Passed</div>
+      <div>Baseline R-001–R-008: 8 | New: 0 | Pending: 5</div>
+    </div>
+    <div class="card">
+      <small>3b. Long-Term Retention (&gt;=7d)</small>
+      <div class="metric">0 Verified</div>
+      <div>Pending &gt;=7d probes: 3. Only H0 passes at &gt;=7 days qualify.</div>
+    </div>
+  </div>
+
+  <h2>Retention Queue (Short-Interval vs Long-Term)</h2>
+  <table>
+    <thead><tr><th>Probe</th><th>Topic</th><th>Tier</th><th>Interval</th><th>Scheduled</th><th>Status</th><th>Verified</th><th>Task</th></tr></thead>
+    <tbody><tr><td><code>R-009</code></td><td><code>T-003</code></td><td>Short (&lt;7d)</td><td>+1d</td><td>2026-11-12</td><td><span class='pill pill-scheduled'>SCHEDULED</span></td><td>No</td><td>Predict flag, res, and count after bool flag = true; int count = 0; bool res = (flag = false || ++count &gt; 0);</td></tr><tr><td><code>R-010</code></td><td><code>T-013</code></td><td>Short (&lt;7d)</td><td>+1d</td><td>2026-11-12</td><td><span class='pill pill-scheduled'>SCHEDULED</span></td><td>No</td><td>Write void reverseArrayWithPointers(int *arr, int n) in-place using only *(arr + i) and *(arr + n - 1 - i) (no []).</td></tr><tr><td><code>R-011</code></td><td><code>T-016</code></td><td>Short (&lt;7d)</td><td>+3d</td><td>2026-11-14</td><td><span class='pill pill-scheduled'>SCHEDULED</span></td><td>No</td><td>Write comparator shorterStringFirst(const string &amp;a, const string &amp;b) sorting by length ascending, breaking ties alphabetically (a &lt; b).</td></tr><tr><td><code>R-012</code></td><td><code>T-019</code></td><td>Short (&lt;7d)</td><td>+3d</td><td>2026-11-14</td><td><span class='pill pill-scheduled'>SCHEDULED</span></td><td>No</td><td>Predict exact birth/death sequence for 3 Lock objects across main(), an inner {} block, and a copy constructor.</td></tr><tr><td><code>R-015</code></td><td><code>T-007</code></td><td>Short (&lt;7d)</td><td>+3d</td><td>2026-11-14</td><td><span class='pill pill-scheduled'>SCHEDULED</span></td><td>No</td><td>Write vector&lt;vector&lt;int&gt;&gt; multiplyMatrices(const vector&lt;vector&lt;int&gt;&gt;&amp; A, const vector&lt;vector&lt;int&gt;&gt;&amp; B) for compatible dimensions.</td></tr><tr><td><code>R-013</code></td><td><code>T-023</code></td><td>Long-Term (&gt;=7d)</td><td>+7d</td><td>2026-11-18</td><td><span class='pill pill-scheduled'>SCHEDULED</span></td><td>No</td><td>Implement longestOnesWithAtMostKZeros(const vector&lt;int&gt;&amp; nums, int k) using a variable-size sliding window in O(N) time.</td></tr><tr><td><code>R-014</code></td><td><code>T-020</code></td><td>Long-Term (&gt;=7d)</td><td>+7d</td><td>2026-11-18</td><td><span class='pill pill-scheduled'>SCHEDULED</span></td><td>No</td><td>Write a function returning a 1-indexed vector&lt;long long&gt; prefix sum array for temps and verify prefix.size() == temps.size() + 1.</td></tr><tr><td><code>R-016</code></td><td><code>T-023</code></td><td>Long-Term (&gt;=7d)</td><td>+7d</td><td>2026-11-18</td><td><span class='pill pill-scheduled'>SCHEDULED</span></td><td>No</td><td>Explain in 2 sentences why while (currentSum &gt; budget) breaks if costs contains negative numbers like -5.</td></tr></tbody>
+  </table>
+
+  <h2>Mistake Pattern Intelligence (C3 Taxonomy)</h2>
+  <table>
+    <thead><tr><th>Taxonomy Class</th><th>Baseline (M-001..019)</th><th>New Open</th><th>New Verified</th><th>Recurring Total</th></tr></thead>
+    <tbody><tr><td>Update-Ordering Fault</td><td>2</td><td>0</td><td>0</td><td>2</td></tr><tr><td>Initialization &amp; Finalization Gaps</td><td>3</td><td>0</td><td>0</td><td>3</td></tr><tr><td>Invariant Misalignment</td><td>1</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Syntactic vs Semantic Confusion</td><td>4</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Off-by-One / Index Semantics</td><td>2</td><td>0</td><td>0</td><td>0</td></tr><tr><td>State-Mutation Blindness &amp; Verification Failure</td><td>2</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Abstraction Leakage, Type/Conversion, Algorithmic Analysis &amp; Problem Interpretation</td><td>5</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+  </table>
+
+  <h2>Topic Matrix (T-001–T-025)</h2>
+  <input id="topicFilter" class="filter" type="search" placeholder="Filter topics by ID, stage, or status..." oninput="filterTopics()">
+  <table id="topicTable">
+    <thead><tr><th>ID</th><th>Stage</th><th>Topic</th><th>Coverage</th><th>Baseline Competence</th><th>Baseline Retention</th><th>Class</th><th>New Sessions</th></tr></thead>
+    <tbody><tr><td><code>T-001</code></td><td>Stage 1</td><td>Data Types, Brace Init {} &amp; Uninitialized UB</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>short_interval</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-002</code></td><td>Stage 1</td><td>Integer Division vs. static_cast&lt;double&gt;</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>short_interval</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-003</code></td><td>Stage 1</td><td>Operator Precedence (=, &amp;&amp;, ||) &amp; Short-Circuiting</td><td>studied</td><td>Proficient</td><td>short_interval</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-004</code></td><td>Stage 2</td><td>1D Loop Invariants, Streak Tracking &amp; Sentinel Loops</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>short_interval</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-005</code></td><td>Stage 2</td><td>Digit Extraction (% 10, / 10), Palindromes, Primes, GCD</td><td>studied</td><td>Proficient (Digit math [A]; GCD/Primes [C])</td><td>short_interval</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-006</code></td><td>Stage 3.1</td><td>2D Matrix Traversal &amp; Main Diagonal Invariants</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>immediate_only</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-007</code></td><td>Stage 3.2</td><td>2D Matrix Multiplication (3-Loop i, j, k Dot Product)</td><td>studied</td><td>Practiced — Needs Revision</td><td>not_assessed</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-008</code></td><td>Stage 3.2</td><td>1D In-Place Array Reversal (i &lt; n / 2 bound)</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>short_interval</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-009</code></td><td>Stage 3.2</td><td>Single-Pass Second-Largest Invariant (INT_MIN)</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>short_interval</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-010</code></td><td>Stage 3.2</td><td>C-String Null Termination &amp; Buffer Overflow Safety</td><td>studied</td><td>Understood</td><td>immediate_only</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-011</code></td><td>Stage 4.1</td><td>std::vector Deep-Copy Value Semantics vs. Reference Iteration</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>short_interval</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-012</code></td><td>Stage 4.2</td><td>std::string Search/Filter (.find, string::npos) &amp; &lt;cctype&gt;</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>short_interval</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-013</code></td><td>Stage 5.1</td><td>Pointers (*, &amp;), Array-to-Pointer Decay &amp; Pointer Arithmetic</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>immediate_only</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-014</code></td><td>Stage 5.1</td><td>Pass-by-Value (T), Mutable Ref (T&amp;), and Const Ref (const T&amp;)</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>short_interval</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-015</code></td><td>Stage 6.1</td><td>Big-O Time &amp; Auxiliary Space Complexity Analysis</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>short_interval</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-016</code></td><td>Stage 6.1</td><td>Core STL Algorithms (sort, reverse, max_element, accumulate) &amp; Comparators</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>immediate_only</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-017</code></td><td>Stage 6.2</td><td>std::unordered_map Mechanics, [] vs .count()/.find(), Frequency &amp; Lookup</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>short_interval</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-018</code></td><td>Stage 7.1</td><td>OOP Encapsulation, Constructors, Initializer Lists &amp; ClassName::</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>short_interval</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-019</code></td><td>Stage 7.2</td><td>Destructors (~ClassName), Scoped LIFO Destruction Order &amp; RAII</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>immediate_only</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-020</code></td><td>Stage 8.1</td><td>1-Indexed Prefix Sums &amp; O(1) Range Sum Queries</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>short_interval</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-021</code></td><td>Stage 8.2</td><td>Two Pointers: Converging &amp; Slow/Fast In-Place Compaction</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>immediate_only</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-022</code></td><td>Stage 8.3</td><td>Fixed-Size Sliding Window</td><td>studied</td><td>Mastered — Immediate Assessment</td><td>immediate_only</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-023</code></td><td>Stage 8.3</td><td>Variable-Size Sliding Window</td><td>studied</td><td>Proficient — Recently Remediated</td><td>immediate_only</td><td><span class='badge badge-A'>[A]</span></td><td>0</td></tr><tr><td><code>T-024</code></td><td>Stage 9.1</td><td>Smart Pointers (std::unique_ptr, make_unique) &amp; Move Semantics (std::move)</td><td>partial</td><td>Not Yet Assessed (Deferred by Learner)</td><td>not_assessed</td><td><span class='badge badge-E'>[E]</span></td><td>0</td></tr><tr><td><code>T-025</code></td><td>Stage 9.2</td><td>Inheritance, Polymorphism, Templates &amp; Lambdas</td><td>not_studied</td><td>Not Studied / Not Yet Assessed</td><td>not_assessed</td><td><span class='badge badge-E'>[E]</span></td><td>0</td></tr></tbody>
+  </table>
+
+  <h2>Imported Session Records (0)</h2>
+  <table>
+    <thead><tr><th>Date</th><th>Session ID</th><th>Attempt</th><th>Hint</th><th>Topics</th><th>Score</th><th>Review</th></tr></thead>
+    <tbody><tr><td colspan="7">No new session records imported yet.</td></tr></tbody>
+  </table>
+
+  <h2>Recent Snapshots</h2>
+  <table>
+    <thead><tr><th>Snapshot</th><th>Created (UTC)</th><th>Sessions</th></tr></thead>
+    <tbody><tr><td colspan="3">No snapshots created yet.</td></tr></tbody>
+  </table>
+
+<script>
+function filterTopics() {
+  const q = document.getElementById('topicFilter').value.toLowerCase();
+  const rows = document.querySelectorAll('#topicTable tbody tr');
+  rows.forEach(r => { r.style.display = r.innerText.toLowerCase().includes(q) ? '' : 'none'; });
+}
+</script>
+</body>
+</html>

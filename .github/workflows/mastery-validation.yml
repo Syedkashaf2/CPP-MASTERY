@@ -1,0 +1,63 @@
+name: C++ Mastery Engine Validation
+
+on:
+  push:
+    paths:
+      - '.mastery/**'
+      - 'scripts/**'
+      - 'schemas/**'
+      - 'prompts/**'
+      - 'tests/**'
+      - 'docs/**'
+      - 'solutions/**'
+      - 'projects/**'
+      - '.github/workflows/mastery-validation.yml'
+  pull_request:
+    paths:
+      - '.mastery/**'
+      - 'scripts/**'
+      - 'schemas/**'
+      - 'prompts/**'
+      - 'tests/**'
+      - 'docs/**'
+      - 'solutions/**'
+      - 'projects/**'
+      - '.github/workflows/mastery-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check Python syntax
+        run: python3 -m py_compile scripts/mastery_engine.py scripts/mastery/*.py tests/*.py
+
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Validate mastery records, baseline hashes, and generated docs sync
+        run: python3 scripts/mastery_engine.py validate --check-docs
+
+      - name: Check C++17 syntax of solution and project sources
+        run: |
+          shopt -s globstar nullglob
+          cpp_files=(solutions/**/*.cpp projects/**/*.cpp)
+          if [ ${#cpp_files[@]} -gt 0 ]; then
+            for f in "${cpp_files[@]}"; do
+              echo "Syntax checking $f"
+              g++ -std=c++17 -Wall -Wextra -fsyntax-only "$f"
+            done
+          else
+            echo "No tracked C++ files to check."
+          fi

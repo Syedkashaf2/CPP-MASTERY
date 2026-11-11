@@ -1,0 +1,57 @@
+{
+  "record_type": "session",
+  "session_id": "YYYY-MM-DD-topic-short-description",
+  "date": "YYYY-MM-DD",
+  "topic_ids": [
+    "T-023"
+  ],
+  "task_ids": [
+    "descriptive-task-id"
+  ],
+  "attempt_type": "first_attempt",
+  "parent_session_id": null,
+  "hint_level": "H0",
+  "independence": {
+    "level": "unassisted",
+    "hints_used": []
+  },
+  "process_summary": {
+    "problem_interpretation": "",
+    "approach_derivation": "",
+    "invariant_reasoning": "",
+    "complexity_analysis": ""
+  },
+  "debugging_history": [],
+  "assessment": {
+    "score_percent": null,
+    "dimensions": {
+      "conceptual_reasoning": null,
+      "mental_execution": null,
+      "debugging": null,
+      "independent_implementation": null,
+      "transfer": null
+    },
+    "proposed_mastery_label": null,
+    "review_status": "pending",
+    "reviewed_by_human": false,
+    "reviewed_at": null,
+    "summary": ""
+  },
+  "evidence": {
+    "code_files": [],
+    "commit_hash": null,
+    "evidence_snapshot_refs": [],
+    "test_command": null,
+    "test_returncode": null,
+    "test_output_excerpt": null,
+    "evidence_ids": [],
+    "limitations": []
+  },
+  "mistakes": [],
+  "retention": {
+    "probe_id_attempted": null,
+    "probes_scheduled": []
+  },
+  "next_actions": [],
+  "human_notes": ""
+}

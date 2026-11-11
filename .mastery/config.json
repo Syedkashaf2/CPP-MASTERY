@@ -1,0 +1,26 @@
+{
+  "engine_version": "2.0.0",
+  "ai_assessment_source": "gemini",
+  "git_sync_mode": "review",
+  "timezone": "Asia/Kolkata",
+  "retention_intervals_days": [
+    1,
+    3,
+    7,
+    14,
+    30
+  ],
+  "long_term_threshold_days": 7,
+  "historical_sources": [
+    "docs/baseline/CPP_LEARNING_PROGRESS_AND_RETENTION_AUDIT.md",
+    "docs/baseline/CPP_COGNITIVE_STATE_LEDGER.md",
+    "docs/baseline/MASTER_INDEPENDENT_CPP_PROBLEM_SOLVING_AND_MASTERY_PROTOCOL_V2.1.md"
+  ],
+  "policy": {
+    "overwrite_history": false,
+    "auto_mastery_promotion": false,
+    "auto_commit": false,
+    "auto_push": false,
+    "human_review_required": true
+  }
+}

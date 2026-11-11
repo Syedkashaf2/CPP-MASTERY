@@ -29,10 +29,28 @@ obj/
 .DS_Store
 Thumbs.db
 
-# VS Code local workspace settings
-.vscode/
+# VS Code local workspace settings (keep shared mastery tasks & C++ build settings tracked)
+.vscode/*
+!.vscode/tasks.json
+!.vscode/settings.json
 
 # Local environment files
 .env
 .env.*
 !.env.example
+
+# Code Runner bare executable outputs
+solutions/1
+problems/1
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# C++ Mastery Engine — local-only transient workspace data
+.mastery/inbox/*
+!.mastery/inbox/.gitkeep
+.mastery/evidence/*
+!.mastery/evidence/.gitkeep
+.mastery/snapshots/*
+!.mastery/snapshots/.gitkeep

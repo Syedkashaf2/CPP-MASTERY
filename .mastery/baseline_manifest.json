@@ -1,0 +1,155 @@
+{
+  "manifest_version": "1.0.0",
+  "baseline_date": "2026-11-11",
+  "audit_window": "Phase 1 Baseline to Stage 9.1 Task 2 (2026-11-11)",
+  "immutable_baseline_files": [
+    {
+      "path": "docs/baseline/CPP_COGNITIVE_STATE_LEDGER.md",
+      "role": "Layer 2 — Cognitive State Ledger (C0.1-C10)",
+      "sha256": "21e240cbef50db3b9f36cf5f43f103a595d2c3ff5c98a46fd9b8c3efdd14f3dc"
+    },
+    {
+      "path": "docs/baseline/CPP_LEARNING_PROGRESS_AND_RETENTION_AUDIT.md",
+      "role": "Layer 1 — Learning Progress, Mistake & Retention Audit (Sections A-L)",
+      "sha256": "3475c7f626dd8a1202885e061a676a05ba88d5baa1bc7a69f40faf18bcd913e4"
+    },
+    {
+      "path": "docs/baseline/MASTER_INDEPENDENT_CPP_PROBLEM_SOLVING_AND_MASTERY_PROTOCOL_V2.1.md",
+      "role": "Governing Protocol V2.1",
+      "sha256": "6ed2198b969b56e1654bca3e7566796d3022d69ca211d4efce119cf780189458"
+    }
+  ],
+  "position": {
+    "completed_stages": [
+      "Stage_1",
+      "Stage_2",
+      "Stage_3",
+      "Stage_4",
+      "Stage_5",
+      "Stage_6",
+      "Stage_7",
+      "Stage_8"
+    ],
+    "active_module": "Stage 9, Module 9.1 (Paused after Task 2 trace per learner request)",
+    "pending_modules": [
+      "Stage 9.1 Tasks 3-4 (std::unique_ptr & std::move coding)",
+      "Stage 9.2 (Inheritance, Polymorphism, Templates, Lambdas)",
+      "Stage 10 (Capstone Project #3 & Final Comprehensive Assessment)"
+    ],
+    "long_term_retention_baseline": "Unverified (>= 7 days); R-001 through R-008 cover short-interval recall only"
+  },
+  "taxonomy_classes": [
+    "Update-Ordering Fault",
+    "Initialization & Finalization Gaps",
+    "Invariant Misalignment",
+    "Syntactic vs Semantic Confusion",
+    "Off-by-One / Index Semantics",
+    "State-Mutation Blindness & Verification Failure",
+    "Abstraction Leakage, Type/Conversion, Algorithmic Analysis & Problem Interpretation"
+  ],
+  "mastery_labels": [
+    "Not assessed",
+    "Developing",
+    "Recently remediated",
+    "Independent",
+    "Provisionally mastered",
+    "Retention verified"
+  ],
+  "reserved_ids": {
+    "topics": [
+      "T-001", "T-002", "T-003", "T-004", "T-005",
+      "T-006", "T-007", "T-008", "T-009", "T-010",
+      "T-011", "T-012", "T-013", "T-014", "T-015",
+      "T-016", "T-017", "T-018", "T-019", "T-020",
+      "T-021", "T-022", "T-023", "T-024", "T-025"
+    ],
+    "historical_mistakes": [
+      "M-001", "M-002", "M-003", "M-004", "M-005",
+      "M-006", "M-007", "M-008", "M-009", "M-010",
+      "M-011", "M-012", "M-013", "M-014", "M-015",
+      "M-016", "M-017", "M-018", "M-019"
+    ],
+    "historical_evidence": [
+      "E-000A", "E-000B", "E-000C", "E-000D", "E-000E",
+      "E-000F", "E-000G", "E-000H", "E-000I", "E-000J", "E-000K",
+      "E-001", "E-002", "E-003", "E-004", "E-005",
+      "E-006", "E-007", "E-007B", "E-008", "E-009",
+      "E-010", "E-011", "E-012", "E-013", "E-014", "E-014B",
+      "E-015", "E-016", "E-017", "E-018", "E-018A",
+      "E-019", "E-020", "E-021", "E-022", "E-023",
+      "E-024", "E-024B", "E-025", "E-026", "E-027",
+      "E-028", "E-029", "E-030", "E-031", "E-032",
+      "E-033", "E-033A", "E-034", "E-035", "E-036",
+      "E-037", "E-037B", "E-038", "E-038A", "E-038B", "E-038C", "E-038D",
+      "E-039", "E-039A", "E-040", "E-041"
+    ],
+    "historical_completed_probes": [
+      "R-001", "R-002", "R-003", "R-004", "R-005", "R-006", "R-007", "R-008"
+    ],
+    "seeded_pending_probes": [
+      "R-009", "R-010", "R-011", "R-012", "R-013", "R-014", "R-015", "R-016"
+    ],
+    "strengths": ["S-001", "S-002", "S-003", "S-004", "S-005"],
+    "hypotheses": ["H-001", "H-002", "H-003", "H-004"]
+  },
+  "topics": [
+    {"id": "T-001", "stage": "Stage 1", "name": "Data Types, Brace Init {} & Uninitialized UB", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "short_interval", "evidence_class": "A"},
+    {"id": "T-002", "stage": "Stage 1", "name": "Integer Division vs. static_cast<double>", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "short_interval", "evidence_class": "A"},
+    {"id": "T-003", "stage": "Stage 1", "name": "Operator Precedence (=, &&, ||) & Short-Circuiting", "coverage": "studied", "competence": "Proficient", "retention": "short_interval", "evidence_class": "A"},
+    {"id": "T-004", "stage": "Stage 2", "name": "1D Loop Invariants, Streak Tracking & Sentinel Loops", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "short_interval", "evidence_class": "A"},
+    {"id": "T-005", "stage": "Stage 2", "name": "Digit Extraction (% 10, / 10), Palindromes, Primes, GCD", "coverage": "studied", "competence": "Proficient (Digit math [A]; GCD/Primes [C])", "retention": "short_interval", "evidence_class": "A"},
+    {"id": "T-006", "stage": "Stage 3.1", "name": "2D Matrix Traversal & Main Diagonal Invariants", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "immediate_only", "evidence_class": "A"},
+    {"id": "T-007", "stage": "Stage 3.2", "name": "2D Matrix Multiplication (3-Loop i, j, k Dot Product)", "coverage": "studied", "competence": "Practiced — Needs Revision", "retention": "not_assessed", "evidence_class": "A"},
+    {"id": "T-008", "stage": "Stage 3.2", "name": "1D In-Place Array Reversal (i < n / 2 bound)", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "short_interval", "evidence_class": "A"},
+    {"id": "T-009", "stage": "Stage 3.2", "name": "Single-Pass Second-Largest Invariant (INT_MIN)", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "short_interval", "evidence_class": "A"},
+    {"id": "T-010", "stage": "Stage 3.2", "name": "C-String Null Termination & Buffer Overflow Safety", "coverage": "studied", "competence": "Understood", "retention": "immediate_only", "evidence_class": "A"},
+    {"id": "T-011", "stage": "Stage 4.1", "name": "std::vector Deep-Copy Value Semantics vs. Reference Iteration", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "short_interval", "evidence_class": "A"},
+    {"id": "T-012", "stage": "Stage 4.2", "name": "std::string Search/Filter (.find, string::npos) & <cctype>", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "short_interval", "evidence_class": "A"},
+    {"id": "T-013", "stage": "Stage 5.1", "name": "Pointers (*, &), Array-to-Pointer Decay & Pointer Arithmetic", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "immediate_only", "evidence_class": "A"},
+    {"id": "T-014", "stage": "Stage 5.1", "name": "Pass-by-Value (T), Mutable Ref (T&), and Const Ref (const T&)", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "short_interval", "evidence_class": "A"},
+    {"id": "T-015", "stage": "Stage 6.1", "name": "Big-O Time & Auxiliary Space Complexity Analysis", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "short_interval", "evidence_class": "A"},
+    {"id": "T-016", "stage": "Stage 6.1", "name": "Core STL Algorithms (sort, reverse, max_element, accumulate) & Comparators", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "immediate_only", "evidence_class": "A"},
+    {"id": "T-017", "stage": "Stage 6.2", "name": "std::unordered_map Mechanics, [] vs .count()/.find(), Frequency & Lookup", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "short_interval", "evidence_class": "A"},
+    {"id": "T-018", "stage": "Stage 7.1", "name": "OOP Encapsulation, Constructors, Initializer Lists & ClassName::", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "short_interval", "evidence_class": "A"},
+    {"id": "T-019", "stage": "Stage 7.2", "name": "Destructors (~ClassName), Scoped LIFO Destruction Order & RAII", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "immediate_only", "evidence_class": "A"},
+    {"id": "T-020", "stage": "Stage 8.1", "name": "1-Indexed Prefix Sums & O(1) Range Sum Queries", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "short_interval", "evidence_class": "A"},
+    {"id": "T-021", "stage": "Stage 8.2", "name": "Two Pointers: Converging & Slow/Fast In-Place Compaction", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "immediate_only", "evidence_class": "A"},
+    {"id": "T-022", "stage": "Stage 8.3", "name": "Fixed-Size Sliding Window", "coverage": "studied", "competence": "Mastered — Immediate Assessment", "retention": "immediate_only", "evidence_class": "A"},
+    {"id": "T-023", "stage": "Stage 8.3", "name": "Variable-Size Sliding Window", "coverage": "studied", "competence": "Proficient — Recently Remediated", "retention": "immediate_only", "evidence_class": "A"},
+    {"id": "T-024", "stage": "Stage 9.1", "name": "Smart Pointers (std::unique_ptr, make_unique) & Move Semantics (std::move)", "coverage": "partial", "competence": "Not Yet Assessed (Deferred by Learner)", "retention": "not_assessed", "evidence_class": "E"},
+    {"id": "T-025", "stage": "Stage 9.2", "name": "Inheritance, Polymorphism, Templates & Lambdas", "coverage": "not_studied", "competence": "Not Studied / Not Yet Assessed", "retention": "not_assessed", "evidence_class": "E"}
+  ],
+  "historical_mistakes_summary": [
+    {"id": "M-001", "topic_id": "T-003", "taxonomy_class": "Syntactic vs Semantic Confusion", "status": "Fixed (Verified [A])", "recurrence": "none"},
+    {"id": "M-002", "topic_id": "T-010", "taxonomy_class": "Abstraction Leakage, Type/Conversion, Algorithmic Analysis & Problem Interpretation", "status": "Fixed (Conceptual [A])", "recurrence": "none"},
+    {"id": "M-003", "topic_id": "T-009", "taxonomy_class": "Initialization & Finalization Gaps", "status": "Fixed (Verified [A])", "recurrence": "once"},
+    {"id": "M-004", "topic_id": "T-007", "taxonomy_class": "State-Mutation Blindness & Verification Failure", "status": "Fixed (Unverified in new 3-loop code)", "recurrence": "none"},
+    {"id": "M-005", "topic_id": "T-003", "taxonomy_class": "Syntactic vs Semantic Confusion", "status": "Fixed (Verified [A])", "recurrence": "none"},
+    {"id": "M-006", "topic_id": "T-007", "taxonomy_class": "Off-by-One / Index Semantics", "status": "Fixed (Verified [A])", "recurrence": "none"},
+    {"id": "M-007", "topic_id": "T-011", "taxonomy_class": "Abstraction Leakage, Type/Conversion, Algorithmic Analysis & Problem Interpretation", "status": "Fixed (Verified [A])", "recurrence": "none"},
+    {"id": "M-008", "topic_id": "T-012", "taxonomy_class": "Abstraction Leakage, Type/Conversion, Algorithmic Analysis & Problem Interpretation", "status": "Fixed (Verified [A])", "recurrence": "none"},
+    {"id": "M-009", "topic_id": "T-014", "taxonomy_class": "State-Mutation Blindness & Verification Failure", "status": "Fixed (Verified [A])", "recurrence": "none"},
+    {"id": "M-010", "topic_id": "T-015", "taxonomy_class": "Abstraction Leakage, Type/Conversion, Algorithmic Analysis & Problem Interpretation", "status": "Fixed (Verified [A])", "recurrence": "none"},
+    {"id": "M-011", "topic_id": "T-017", "taxonomy_class": "Update-Ordering Fault", "status": "Fixed (Verified [A])", "recurrence": "once"},
+    {"id": "M-012", "topic_id": "T-017", "taxonomy_class": "Syntactic vs Semantic Confusion", "status": "Fixed (Verified [A])", "recurrence": "none"},
+    {"id": "M-013", "topic_id": "T-018", "taxonomy_class": "Abstraction Leakage, Type/Conversion, Algorithmic Analysis & Problem Interpretation", "status": "Fixed (Verified [A])", "recurrence": "none"},
+    {"id": "M-014", "topic_id": "T-020", "taxonomy_class": "Off-by-One / Index Semantics", "status": "Fixed (Verified [A])", "recurrence": "none"},
+    {"id": "M-015", "topic_id": "T-023", "taxonomy_class": "Initialization & Finalization Gaps", "status": "Fixed (Verified [A])", "recurrence": "repeated"},
+    {"id": "M-016", "topic_id": "T-023", "taxonomy_class": "Invariant Misalignment", "status": "Fixed (Verified [A])", "recurrence": "none"},
+    {"id": "M-017", "topic_id": "T-023", "taxonomy_class": "Syntactic vs Semantic Confusion", "status": "Fixed (Verified [A])", "recurrence": "none"},
+    {"id": "M-018", "topic_id": "T-020", "taxonomy_class": "Initialization & Finalization Gaps", "status": "Fixed (Verified [A])", "recurrence": "repeated"},
+    {"id": "M-019", "topic_id": "T-022", "taxonomy_class": "Update-Ordering Fault", "status": "Fixed (Verified [A])", "recurrence": "repeated"}
+  ],
+  "baseline_progress_report": {
+    "curriculum_coverage": "Stages 1-8 are recorded complete. Stage 9.1 is paused after Task 2; Stage 9.2 and Stage 10 remain pending.",
+    "demonstrated_competence": "The audit records substantial independent implementation, tracing, debugging, and transfer evidence through Stages 3-8 ([A]). Stages 1-2 partially rely on preserved summaries ([C]).",
+    "retention": "Selected short-interval recall checks are documented (R-001 through R-008). Delayed retention at 7 days or more remains unverified ([E]); no retention percentage should be inferred.",
+    "current_priority": "Complete probes R-009 through R-016, resolve T-007 (matrix multiplication) and container-valued hash map gaps, then study smart-pointer and move-semantics theory before Stage 9.1 Tasks 3-4.",
+    "remaining_milestones": [
+      "Complete and record scheduled retrieval probes (R-009 through R-016).",
+      "Complete Stage 9.1 theory and coding for smart pointers and move semantics (T-024).",
+      "Study Stage 9.2 topics: templates, lambdas, and polymorphism (T-025).",
+      "Complete the Stage 10 capstone and final comprehensive assessment."
+    ]
+  }
+}

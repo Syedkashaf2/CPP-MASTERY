@@ -1,0 +1,12 @@
+{
+  "policy": "Schedule delayed probes only after a session; never mark a probe verified before completion. Keep short-interval (< 7d) separate from long-term (>= 7d) retention.",
+  "intervals_days": [
+    1,
+    3,
+    7,
+    14,
+    30
+  ],
+  "long_term_threshold_days": 7,
+  "verification_rule": "Long-term retention is verified only when a probe with interval_days >= 7 is completed with hint_level == H0 (unassisted) and passed result."
+}

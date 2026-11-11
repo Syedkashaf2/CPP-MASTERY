@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0.0",
+  "next_mistake_number": 20,
+  "baseline_reserved_range": "M-001 to M-019 (preserved read-only in docs/baseline/)",
+  "mistakes": []
+}
